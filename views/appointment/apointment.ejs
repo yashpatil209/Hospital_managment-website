@@ -1,0 +1,38 @@
+<% layout("/layouts/boilerplate") %>
+
+<form action="/newlife/appointment" method="post" class="search-bar">
+	<input type="text" name="name" placeholder="search here" required>
+	<button>Submit</button>
+</form>  
+
+<div class="dropdown dropdown_appointments">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Department
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="/newlife/appointment/dp?department=Physicians">Physicians</a>
+      <a class="dropdown-item" href="/newlife/appointment/dp?department=Cardiologist">Cardiology</a>
+      <a class="dropdown-item" href="/newlife/appointment/dp?department=Neurologist">Neurology</a>
+      <a class="dropdown-item" href="/newlife/appointment/dp?department=Gynecologist">Gynecology</a>
+      <a class="dropdown-item" href="/newlife/appointment/dp?department=Dermatologist">Dermatology</a>
+      <a class="dropdown-item" href="/newlife/appointment/dp?department=Radiologist">Radiology</a>
+    </div>
+  </div>
+
+<% for(let doctor of doctors){ %>
+<div class="appointment_cont">
+    <div class="appointment_img">
+        <img src="/images/dr.webp" alt="">
+    </div>
+    <div class="appdr_info">
+        <h4>Dr .<%= doctor.name %></h4>
+        <p><%= doctor.department %></p>
+        <span>Mbbs</span>
+        <p><i class="fa-solid fa-location-dot"></i> Newlife Hospital, pune</p>
+    </div>
+    <div class="appointment_button">
+        <p>MON-SAT <br> <span>(9:00 PM - 5:00 PM)</span></p>
+        <a href="/newlife/appointment/<%= doctor._id %>/getappointment">Book Appointment</a>
+    </div>
+</div>
+<% } %>

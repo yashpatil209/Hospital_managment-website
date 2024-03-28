@@ -1,0 +1,43 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="card">
+    <div class="getapp_form">
+        <form action="/newlife/appointment/<%= doctor._id %>/getappointment" method="post">
+            <div data-mdb-input-init class="form-outline mb-3">
+                <label class="form-label" for="form3Example3">Patient name</label>
+                <input type="text" name="app[namea]" id="form3Example3" class="form-control" placeholder="Enter Patient name" />
+            </div>
+            <div data-mdb-input-init class="form-outline mb-3">
+                <label class="fo rm-label" for="form3Example3">Email address</label>
+                <input type="email" name="app[emaila]" id="form3Example3" class="form-control" placeholder="Enter Email id" />
+            </div>
+        
+            <div data-mdb-input-init class="form-outline mb-3">
+                <label class="form-label" for="form3Example3">Phone no</label>
+                <input type="text" name="app[phonea]"  class="form-control"  placeholder="Enter Phone no" />
+            </div>
+
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-4">
+              <div class="col">
+                <div data-mdb-input-init class="form-outline">
+                    <label class="form-label" for="form3Example1">Choose Date</label>
+                    <input type="date" name="date" id="inputEstDate" class="form-control date_input" />
+                </div>
+              </div>
+              
+              <div class="col">
+                <label class="form-label" for="form3Example1">Choose Time</label><br>
+                <select data-mdb-select-init class="select form-control" name="app[time]">
+                  <option >Choose time</option>
+                  <option value="Morning">Morning <span>(8:15-12:00)</span></option>
+                  <option value="Afternoon">Afternoon <span>(1:15-5:00)</span></option>
+                  <option value="Evening">Evening <span>(6:00-9:00)</span></option>
+                </select>
+              </div>
+            </div>
+            <!-- Submit button -->
+            <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block m-auto">Book Appointment</button>
+          </form>
+    </div>
+</div>

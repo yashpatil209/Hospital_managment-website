@@ -1,0 +1,26 @@
+<% layout("/layouts/ddashboard") %>
+
+<div class="patient_info">
+  <div class="dash_heading">
+    <h4>Doctors</h4>
+  </div>
+  <form action="/newlife/ddashboard/<%= currUser._id %>/doctors" method="post" class="search-bar">
+    <input type="text" name="name" placeholder="search here" required>
+    <button>Submit</button>
+  </form> 
+  <div class="table_card">
+    <table>
+      <tr>
+        <th>name</th>
+        <th>username</th>
+        <th>email</th>
+      </tr>
+      <% for(let doctor of doctors){ %>
+        <tr>
+          <td><%= doctor.name %></td>
+          <td><%= doctor.username %></td>
+          <td><%= doctor.email %></td>
+        </tr>
+        <% } %>
+  </div>
+</div>

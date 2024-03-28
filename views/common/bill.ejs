@@ -1,0 +1,118 @@
+<% if(currUser.role == "hospital"){ %>
+    <% layout("/layouts/hdashboard") %>
+<% } %>
+<% if(currUser.role == "doctor"){ %>
+    <% layout("/layouts/ddashboard") %>
+<% } %>
+<% if(currUser.role == "patient"){ %>
+    <% layout("/layouts/pdashboard") %>
+<% } %>
+
+<style>
+    @media print {
+  body {
+    visibility: hidden;
+  }
+  .print_section {
+    visibility: visible;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    width: 60%;
+  }
+ }
+</style>
+
+
+<button class="print_btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+
+<div class="print_section" style="margin: auto;">   
+    <div class=" "style="margin: auto;">
+           <div class="receipt-main">
+               <div class="row">
+                   <div class="receipt-header">
+                       <div class="">
+                           <div class="receipt-left">
+                               <h2>Newlife Hospital</h2>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               
+               <div class="row">
+                   <div class="receipt-header receipt-header-mid">
+                       <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                           <div class="receipt-right">
+                               <h5><%= patient.name %> </h5>
+                               <p><b>Mobile :</b> <%= info.phoneno %></p>
+                               <p><b>Email :</b> <%= patient.email %></p>
+                               <p><b>Address :</b> <%= info.addp %></p>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               
+               <div>
+                   <table class="table table-bordered">
+                       <thead>
+                           <tr>
+                               <th>Particulars</th>
+                               <th>Amount</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                           <tr>
+                               <td class="col-md-9">Bed charges</td>
+                               <td class="col-md-3"><i class="fa fa-inr"> </i> <%= bedCharge %>/-</td>
+                           </tr>
+                           <tr>
+                               <td class="col-md-9">Nursing charges</td>
+                               <td class="col-md-3"><i class="fa fa-inr"> </i><%= nurseCharge %>/-</td>
+                           </tr>
+                           <tr>
+                               <td class="col-md-9">Injections charges</td>
+                               <td class="col-md-3"><i class="fa fa-inr"></i> <%= bill.injection %>/-</td>
+                           </tr>
+                           <tr>
+                               <td class="col-md-9">Saline charges</td>
+                               <td class="col-md-3"><i class="fa fa-inr"></i> <%= bill.saline %>/-</td>
+                           </tr>
+                           <tr>
+                               <td class="col-md-9">Dressing charges</td>
+                               <td class="col-md-3"><i class="fa fa-inr"></i> <%= bill.dressing %>/-</td>
+                           </tr>
+                           <tr>
+                               <td class="col-md-9">Operation charges</td>
+                               <td class="col-md-3"><i class="fa fa-inr"></i>  <%= bill.operation %>/-</td>
+                           </tr>
+                           <tr>
+                               <td class="col-md-9">Lab charges</td>
+                               <td class="col-md-3"><i class="fa fa-inr"></i>  <%= bill.labfees %>/-</td>
+                           </tr>
+                           <tr>
+                               <td class="text-right"><h7><strong>Total: </strong></h7></td>
+                               <td class="text-left text-danger"><h7><strong><i class="fa fa-inr"></i> <%= total %>/-</strong></h7></td>
+                           <br>
+                       </tbody>
+                   </table>
+               </div>
+               
+               <div class="row">
+                   <div class="receipt-header receipt-header-mid receipt-footer">
+                       <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+                           <div class="receipt-right">
+                               <p><b>Date :</b> <%= info.discharge.toLocaleDateString()%></p>
+                               <h5 style="color: rgb(118, 222, 14);">PAID</h5>
+                           </div>
+                       </div>
+                       <div class="col-xs-4 col-sm-4 col-md-4">
+                           <div class="receipt-left">
+                               <h1>Stamp</h1>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               
+           </div>    
+       </div>
+   </div>

@@ -1,0 +1,35 @@
+<% layout("/layouts/hdashboard") %>
+
+
+<div class="signup_container">
+    <div class="signup_card">
+        <div class="card_title">
+            <h2>Register </h2>
+        </div>
+        <br>
+        <div class="form " id="d_form">
+            <form action="/signup" method="post">
+                <input type="text" name="name" id="name" placeholder="Name" />
+                <input type="text" name="username" id="username" placeholder="UserName" />
+                <input type="text" name="email" id="email" placeholder="email" />
+                <select name="role" class="form-select" aria-label="Default select example">
+                    <option selected>Select role</option>
+                    <option value="patient">Patient</option>
+                    <option value="doctor">Doctor</option>
+                </select>
+                <select name="department" class="form-select" aria-label="Default select example">
+                    <option  selected>Select Department</option>
+                    <option value="Physicians">Physicians</option>
+                    <option value="Cardiologist">Cardiology</option>
+                    <option value="Neurologist">Neurology</option>
+                    <option value="Gynecologist">Gynecology</option>
+                    <option value="Dermatologist">Dermatology</option>
+                    <option value="Radiologist">Radiology</option>
+                </select>
+                <input type="text" name="password" placeholder="Password" id="password" />
+                <br>
+                <button>Register</button>
+            </form>
+        </div>
+    </div>
+</div>

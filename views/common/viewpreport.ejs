@@ -1,0 +1,27 @@
+<% if(currUser.role == "hospital"){ %>
+    <% layout("/layouts/hdashboard") %>
+<% } %>
+<% if(currUser.role == "doctor"){ %>
+    <% layout("/layouts/ddashboard") %>
+<% } %>
+<% if(currUser.role == "patient"){ %>
+    <% layout("/layouts/pdashboard") %>
+<% } %>
+
+
+<div class="dr_info_div">
+    <p>Patient Name :  <span><%= patient.name %></span></p>
+    
+    <h5>Medical details - </h5>
+    <br>
+    <p>Height : <span><%= report.height %></span></p>
+    <p>Weigth : <span><%= report.weight %></span></p>
+    <p>Blood pressure : <span><%= report.bloodp %></span></p>
+    <p>symptoms : <span><%= report.symptoms %></span></p>
+    <p>deasease : <span><%= report.deasease %></span></p>
+    <br><br><br>
+    <div>
+        <img src="<%= report.labr %>" alt="">
+    </div>
+   
+</div>

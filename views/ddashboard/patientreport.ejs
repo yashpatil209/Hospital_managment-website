@@ -1,0 +1,45 @@
+<% layout("/layouts/ddashboard") %>
+
+
+<div class="dr_info_div" >
+  <h3 class="patient_info_heaing" >Fill Patient Information</h3>
+  <form action="/newlife/ddashboard/<%= id %>/fillpatientreport" method="POST" enctype="multipart/form-data">
+    <br><h5>Personal Information -</h5><br>
+    <div>
+      <div class="form-row">
+        <div class="form-group col-md-3 ml-4">
+          <label for="inputEmail4">Patient Height</label>
+          <input type="number" name="report[height]" class="form-control"  placeholder="Enter Height">
+        </div>
+        <div class="form-group col-md-3 ml-5">
+          <label for="inputPassword4">Patient Weigth</label>
+          <input type="number" name="report[weight]" class="form-control"  placeholder="Enter Weigth">
+        </div>
+        <div class="form-group col-md-3 ml-5">
+          <label for="inputPassword4">Patient Bloodpressure</label>
+          <input type="number" name="report[bloodp]" class="form-control"  placeholder="Enter Bloodpressure">
+        </div>
+      </div>
+        <div class="form-group col-md-10 ">
+          <label for="inputPassword4">Patient symptoms</label>
+          <textarea name="report[symptoms]" class="form-control" placeholder="Enter symptoms"  cols="30" rows="10"></textarea>
+        </div>
+        <div class="form-group col-md-8 ">
+          <label for="inputPassword4">Patient Dieasese</label>
+          <input type="text" name="report[deasease]" class="form-control" id="mother" placeholder="Enter mother name">
+        </div>
+        <div class="form-group col-md-10">
+          <label for="inputPassword4">Upload Report</label>
+          <input type="file" name="report[labr]" class="form-control" >
+        </div>
+        <div class="form-group col-md-10">
+          <label for="inputPassword4">Any Note (optional)</label>
+          <textarea type="text" name="report[note]" class="form-control" id="mother" placeholder="Enter mother name"></textarea>
+        </div>
+      </div>
+        
+       
+    <br><br>
+    <button type="submit" class="btn btn-primary ">Submit</button>
+  </form>
+</div>

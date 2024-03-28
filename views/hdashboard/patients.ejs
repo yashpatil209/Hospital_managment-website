@@ -1,0 +1,37 @@
+<% layout("/layouts/hdashboard") %>
+
+
+<div class="patient_info">
+  <div class="dash_heading">
+    <h4>Patients</h4>
+  </div>
+  
+  <form action="/newlife/hdashboard/patients" method="post" class="search-bar">
+    <input type="text" name="name" placeholder="search here" required>
+    <button>Submit</button>
+  </form> 
+  <div class="table_card">
+    <table>
+      <tr>
+        <th>name</th>
+        <th class="res_table">username</th>
+        <th class="res_table">email</th>
+        <th>Info</th>
+      </tr>
+      <% for(let patient of patients){ %>
+        <tr>
+          <td><%= patient.name %></td>
+          <td class="res_table"><%= patient.username %></td>
+          <td class="res_table"><%= patient.email %></td>
+          <td>
+            <% if(patient.info){ %>
+              <a href="/newlife/<%= patient._id %>/patientInfo">view Info</a></td>
+            <% } %>
+            <% if(!patient.info){ %>
+              <a href="/newlife/hdashboard/<%= patient._id %>/fillpatientInfo">Fill Info</a>
+            <% } %>
+          </td>
+        </tr>
+        <% } %>
+  </div>
+</div>

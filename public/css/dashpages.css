@@ -1,0 +1,333 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+*{
+  font-family: Poppins , sans-serif;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.f-none{
+  float: none;
+}
+
+.logo-details{
+  margin-top: 50px;
+  padding-left: 20px;
+}
+.patient_info_div{
+  background-color: #fff;
+  padding: 15px 0;
+  border-radius: 10px;
+}
+
+.patient_info{
+  padding: 20px 25px;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+td, th {
+    border: 1px solid #7b7b7b;
+    text-align: left;
+    padding: 8px;
+}
+th{
+    background-color: #b2b2b2;
+}
+td{
+  background-color: #eeeeee;
+}
+
+@media screen and (max-width: 1000px) {
+  .res_table{
+    display: none;
+  }
+  .patient_info{
+    padding: 20px 0;
+  }
+  .patient_info_div{
+    padding: 0 10px;
+  }
+}
+
+.docdash_dashboard{
+  padding: 10px 20px;
+}
+
+.dash_heading{
+  font-family: Poppins , sans-serif;
+  font-size: 500;
+  background-color: #1652c1;
+  margin: 20px 0 15px 0 ;
+  padding: 5px 10px;
+  /* border-radius: 10px; */
+  color: #ffffff;
+  text-align: center;
+}
+
+.docdash_info{
+  background-color: #bdbdbd;
+  border-radius: 15px;
+  padding: 25px 0;
+  /* color: #ffffff; */
+}
+
+.ddashlogo{
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: auto;
+  margin-bottom: 10px;
+}
+.ddashlogo img{
+  height: 130px;
+  width: 130px;
+}
+.docdash_info p{
+  font-weight: 500;
+  font-size: 17px;
+  text-align: center;
+  margin: 0;
+  /* color: #ffffff;  */
+}
+.docdash_btn{
+  text-align: center;
+  margin-top: 30px;
+}
+.docdash_btn a{
+  background-color: rgb(0, 53, 102);
+  padding: 8px 10px;
+  color: #fff;
+  border-radius: 10px;
+}
+.docdash_btn a:hover{
+  /* color: #ffffff; */
+  cursor: pointer;
+  text-decoration: none;
+}
+.docdash_card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.good_thouts{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.good_thouts div{
+  width: 48%;
+  font-size: 25px;
+  /* color: #ffffff; */
+  padding: 25px 25px;
+  background-color: #bdbdbd;
+}
+.doc_card{
+  display: flex;
+  background-color: #bdbdbd;
+  width: 30rem;
+  border-radius: 10px;
+  padding: 20px 60px;
+  /* color: #ffffff; */
+  margin: auto;
+  margin-top: 20px;
+}
+.doc_card i{
+  font-size: 30px;
+  text-align: center;
+  margin: 25px 30px 0 0;
+}
+.doc_card-para h2{
+  margin-top: 10px;
+}
+.doc_card-para p{
+  margin: 0;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .doc_card{
+    margin: auto;
+    margin-top: 20px;
+  }
+  .good_thouts{
+    flex-direction: column;
+  }
+  .good_thouts div{
+    width: 32rem;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+  .dash_heading{
+    margin-top: 60px;
+  }
+}
+
+/* info page */
+
+.dr_info_div{
+  margin: 15px 15px;
+  padding: 25px 30px;
+  background-color: #fff;
+}
+.patient_info_heaing{
+  text-align: center;
+  border-bottom: 1px solid rgb(158, 158, 158);
+  padding-bottom: 10px;
+}
+
+
+
+/* Information */
+
+/* Import Font Dancing Script */
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+
+* {
+    margin: 0;
+}
+
+.table_card{
+  background-color: #fff;
+  border-radius: 18px;
+  box-shadow: 1px 1px 8px 0 grey;
+  /* height: auto; */
+  margin: 20px 0 20px 0;
+  padding: 20px 20px;
+}
+.table_card td{
+  border: none;
+  border-bottom: 1px solid rgb(195, 195, 195);
+  background: none;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 1400px) {
+  .res_table{
+    display :  none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .dashboard_container{
+    margin: 0%;
+    padding: 5px;
+  }
+  .information_card{
+    margin-top: 40px;
+  }
+
+}
+.discharge_button{
+  border: 0;
+  background: #c9c9c9;
+  font-size: 20px;
+  color: rgb(17, 0, 78);
+  padding: 5px 10px;
+}
+/* Main */
+.info_main {
+    margin-top: 2%;
+    font-size: 28px;
+    padding: 0 10px;
+}
+
+.info_main h2 {
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+.information_card {
+    background-color: #fff;
+    border-radius: 18px;
+    box-shadow: 1px 1px 8px 0 grey;
+    /* height: auto; */
+    margin-bottom: 20px;
+    padding: 30px 70px;
+}
+.ward_card p{
+  font-size: 20px;
+  margin-right: 30px;
+}
+.information_card a{
+  font-size: 20px;
+  margin-left: 50px;
+}
+.print_btn{
+  position: absolute;
+  right: 80px;
+  border: none;
+  background: none;
+  color: #1652c1;
+}
+.info_main .information_card table {
+    border: none;
+    font-size: 18px;
+    height: 270px;
+    width: 90%;
+}
+
+.info_main td , th{
+  border: none;
+  background-color: #fff;
+}
+@media screen and (max-width: 800px) {
+  .information_card{
+    padding: 15px;
+  }
+  .information_card td{
+    font-size: 12px;
+  }
+
+}
+.social-media {
+    text-align: center;
+    width: 90%;
+}
+
+.social-media span {
+    margin: 0 10px;
+}
+
+.fa-facebook:hover {
+    color: #4267b3 !important;
+}
+
+.fa-twitter:hover {
+    color: #1da1f2 !important;
+}
+
+.fa-instagram:hover {
+    color: #ce2b94 !important;
+}
+
+.fa-invision:hover {
+    color: #f83263 !important;
+}
+
+.fa-github:hover {
+    color: #161414 !important;
+}
+
+.fa-whatsapp:hover {
+    color: #25d366 !important;
+}
+
+.fa-snapchat:hover {
+    color: #fffb01 !important;
+}

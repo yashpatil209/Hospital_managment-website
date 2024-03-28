@@ -1,0 +1,105 @@
+<nav class="navbar navbar-light bg-light fixed-top hsidebar_drop">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Dr.<%= currUser.name %></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Dr.<%= currUser.name %></h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/newlife/ddashboard/<%= currUser._id %>">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/newlife/ddashboard/<%= currUser._id %>/myappointments">Appointments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/newlife/ddashboard/<%= currUser._id %>/patients">Patients</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/newlife/ddashboard/<%= currUser._id %>/Doctors">Doctors</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<div class="sidebar">
+    <div class="side_logo">
+        <div class="drlogo">
+            <div class="image">
+              <% if(currUser.image){ %>
+                <img src="<%= currUser.image %>" >
+              <% } %>
+              <% if(!currUser.image){ %>
+                <img src="/images/doctor.png" alt="">
+              <% } %>
+            </div>
+        </div>
+        <p>Dr.<%= currUser.name %></p>
+        <p><%= currUser.department %></p>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a href="/">
+                <i class="fa-solid fa-house"></i>
+                <span class="link_name">Home</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="/">Home</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/newlife/ddashboard/<%= currUser._id %>">
+                <i class='bx bx-grid-alt' ></i>
+                <span class="link_name">Dashboard</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">Dashboard</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/newlife/ddashboard/<%= currUser._id %>/patients">
+                <i class="fa-solid fa-bed"></i>
+                <span class="link_name">Patients</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="/newlife/ddashboard/<%= currUser._id %>/patients">Patients</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/newlife/ddashboard/<%= currUser._id %>/myappointments">
+                <i class="fa-solid fa-scroll"></i>
+                <span class="link_name">Appointments</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="/newlife/ddashboard/<%= currUser._id %>/myappointments">Appointments</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/newlife/ddashboard/<%= currUser._id %>/doctors">
+                <i class="fa-solid fa-user-doctor"></i>
+                <span class="link_name">Doctors</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="/newlife/ddashboard/<%= currUser._id %>/doctors">Doctors</a></li>
+            </ul>
+        </li>
+    <li>
+        <div class="profile-details">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <div class="name-job">
+                <div class="profile_name">Log out</div>
+            </div>
+        </div>
+    </li>
+</ul>
+</div>

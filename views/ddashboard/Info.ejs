@@ -1,0 +1,83 @@
+<% layout("/layouts/ddashboard") %>
+<div class="dr_info_div" >
+  <h3 class="patient_info_heaing" >Fill Your Information</h3>
+  <form action="/newlife/ddashboard/<%= currUser._id %>/doctorinfo" method="POST" enctype="multipart/form-data">
+    <br><h5>Personal Information -</h5><br>
+    <div class="form-row">
+      <div class="form-group col-md-5 ">
+        <label for="inputEmail4">Father name</label>
+        <input type="text" name="info[fname]" class="form-control" id="father" placeholder="Enter father name">
+      </div>
+      <div class="form-group col-md-5 ml-5">
+        <label for="inputPassword4">Mother name</label>
+        <input type="text" name="info[mname]" class="form-control" id="mother" placeholder="Enter mother name">
+      </div>
+      <div class="form-group col-md-10">
+        <label for="inputPassword4">Image</label>
+        <input type="file" name="info[image]" class="form-control" >
+      </div>
+      <div class="form-group col-md-5">
+        <label for="inputAddress">Phone no</label>
+        <input type="text" name="info[mno]" class="form-control" id="inputAddress" placeholder="Enter phone no">
+      </div>
+      <div class="form-group col-md-3 ml-3">
+        <label for="inputAddress">Enter gender</label>
+        <input type="text" name="info[sex]" class="form-control" id="inputAddress" placeholder="Enter gender">
+      </div>
+      <div class="form-group col-md-3 ml-3">
+        <label for="inputAddress">Death of birth</label>
+        <input type="text" name="info[dob]" class="form-control" id="inputAddress" placeholder="Enter dob">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputAddress">Enter your age</label>
+        <input type="text" name="info[age]" class="form-control" id="inputAddress" placeholder="Enter age">
+      </div>
+      <div class="form-group col-md-3 ml-5 ">
+        <label for="inputAddress">Enter your bloodgroup</label>
+        <input type="text" name="info[bg]" class="form-control" id="inputAddress" placeholder="Enter bloodgroup">
+      </div>
+    </div>
+    <div class="form-group ">
+      <br><hr>
+      <h5>Address Information -</h5><br>
+      <label for="inputAddress">Address</label>
+      <input type="text" name="info[add]" class="form-control" id="inputAddress" placeholder="Enter your address">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <label for="inputCity">City</label>
+        <input type="text" name="info[city]" class="form-control" id="city" placeholder="Enter your city">
+      </div>
+      <div class="form-group col-md-3 ml-5">
+        <label for="inputCity">State</label>
+        <input type="text" name="info[state]" class="form-control" id="state" placeholder="Enter your state">
+      </div>
+      <div class="form-group col-md-3 ml-5">
+        <label for="inputCity">Country</label>
+        <input type="text" name="info[country]" class="form-control" id="country" placeholder="Enter your country">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputZip">Zip code</label>
+        <input type="text" name="info[zcode]" class="form-control" id="zip" placeholder="Enter your zip-code">
+      </div>
+    </div>
+    <br><hr>
+    <h5>Personal Information -</h5><br>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="inputZip">Qualification</label>
+        <input type="text" name="info[degree]" class="form-control" id="Degree" placeholder="Enter your qualification">
+      </div>
+      <div class="form-group col-md-6 ml-5">
+        <label for="inputZip">College</label>
+        <input type="text" name="info[college]" class="form-control" id="college" placeholder="Enter college name">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputZip">passing year</label>
+        <input type="text" name="info[passy]" class="form-control" id="pyear" placeholder="Enter passing year">
+      </div>
+    </div>
+    <br><br>
+    <button type="submit" class="btn btn-primary ">Submit</button>
+  </form>
+</div>

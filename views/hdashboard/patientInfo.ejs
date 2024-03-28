@@ -1,0 +1,139 @@
+<% layout("/layouts/hdashboard") %>
+
+<div class="dr_info_div" >
+  <h3 class="patient_info_heaing" >Fill Patient Information</h3>
+  <form action="/newlife/hdashboard/<%= id %>/fillpatientInfo" method="POST" enctype="multipart/form-data">
+    
+    <h5>Room Information -</h5><br>
+    <div class="form-row">
+      <div class="form-group col-md-5  ml-3">
+        <label for="inputAddress">Enter gender</label>
+        <select class="form-control col-md-8 f-none" name="info[ward]" aria-label="Default select example">
+            <option default >Select ward</option>
+            <option value="gw">GENERAL WARD</option>
+            <option value="sw">SPECIAL WARDS </option>
+            <option value="ssw">SEMI-SPECIAL ROOM</option>
+            <option value="iw">ICU</option>
+        </select>      
+    </div>
+      <div class="form-group col-md-4 ml-1">
+        <label for="inputZip">Ward no <span>*</span></label>
+        <input type="text" name="info[wardno]" class="form-control" id="college" placeholder="Enter Insurance no">
+      </div>
+    </div>
+     <hr>
+    <br><h5>Personal Information -</h5><br>
+    <div class="form-row">
+      <div class="form-group col-md-5 ">
+        <label for="inputEmail4">Father name</label>
+        <input type="text" name="info[fname]" class="form-control" id="father" placeholder="Enter father name">
+      </div>
+      <div class="form-group col-md-5 ml-5">
+        <label for="inputPassword4">Mother name</label>
+        <input type="text" name="info[mname]" class="form-control" id="mother" placeholder="Enter mother name">
+      </div>
+      <div class="form-group col-md-10">
+        <label for="inputPassword4" >Upload Image</label>
+        <input type="file" name="info[image]" class="form-control" >
+      </div>
+      <div class="form-group col-md-5">
+        <label for="inputAddress">Phone no</label>
+        <input type="number" name="info[phoneno]" class="form-control" id="inputAddress" placeholder="Enter phone no">
+      </div>
+      <div class="form-group col-md-5  ml-3">
+        <label for="inputAddress">Enter gender</label>
+        <select class="form-control col-md-5 f-none" name="info[sex]" aria-label="Default select example">
+            <option value="male">male</option>
+            <option value="female">female</option>
+            <option value="other">other</option>
+        </select>      
+    </div>
+      <div class="form-group col-md-3 ml-3">
+        <label for="inputAddress">Death of birth</label>
+        <input type="date" name="info[dob]" class="form-control" id="inputAddress" placeholder="Enter dob">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputAddress">Enter your age</label>
+        <input type="number" name="info[age]" class="form-control" id="inputAddress" placeholder="Enter age">
+      </div>
+      <div class="form-group col-md-3 ml-5 ">
+        <label for="inputAddress">Enter your bloodgroup</label>
+        <input type="text" name="info[bg]" class="form-control" id="inputAddress" placeholder="Enter bloodgroup">
+      </div>
+    </div>
+    <div class="form-group ">
+      <br><hr>
+      <h5>Address Information -</h5><br>
+      <label for="inputAddress">Address</label>
+      <input type="text" name="info[addp]" class="form-control" id="inputAddress" placeholder="Enter your address">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <label for="inputCity">City</label>
+        <input type="text" name="info[city]" class="form-control" id="city" placeholder="Enter your city">
+      </div>
+      <div class="form-group col-md-3 ml-5">
+        <label for="inputCity">State</label>
+        <input type="text" name="info[state]" class="form-control" id="state" placeholder="Enter your state">
+      </div>
+      <div class="form-group col-md-3 ml-5">
+        <label for="inputCity">Country</label>
+        <input type="text" name="info[country]" class="form-control" id="country" placeholder="Enter your country">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputZip">Zip code</label>
+        <input type="number" name="info[zip]" class="form-control" id="zip" placeholder="Enter your zip-code">
+      </div>
+    </div>
+    <br><hr>
+    <h5>Guardian Information -</h5><br>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+          <label for="inputZip">relation</label>
+          <input type="text" name="info[grelation]" class="form-control" id="Degree" placeholder="Enter your relation">
+        </div>
+      <div class="form-group col-md-6">
+        <label for="inputZip">Guardian name</label>
+        <input type="text" name="info[gnmae]" class="form-control" id="Degree" placeholder="Enter your qualification">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputZip">phone no</label>
+        <input type="number" name="info[gphone]" class="form-control" id="Degree" placeholder="Enter your phone no">
+      </div>
+      <div class="form-group col-md-9">
+        <label for="inputZip">Address</label>
+        <input type="text" name="info[gadd]" class="form-control" id="Degree" placeholder="Enter your address">
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-3 ml-3">
+          <label for="inputCity">City</label>
+          <input type="text" name="info[gcity]" class="form-control" id="city" placeholder="Enter your city">
+        </div>
+        <div class="form-group col-md-3 ml-5">
+          <label for="inputCity">State</label>
+          <input type="text" name="info[gstate]" class="form-control" id="state" placeholder="Enter your state">
+        </div>
+        <div class="form-group col-md-3 ml-5">
+          <label for="inputCity">Country</label>
+          <input type="text" name="info[gcountry]" class="form-control" id="country" placeholder="Enter your country">
+        </div>
+      </div>
+    </div>
+    <br><hr>
+    <h5>Insurance Information -</h5><br>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="inputZip">Insurance name <span>*</span></label>
+        <input type="text" name="info[iname]" class="form-control" id="Degree" placeholder="Enter your Insurance name">
+      </div>
+      <div class="form-group col-md-6 ml-5">
+        <label for="inputZip">Insurance no <span>*</span></label>
+        <input type="number" name="info[ino]" class="form-control" id="college" placeholder="Enter Insurance no">
+      </div>
+    </div>
+
+
+    <br><br>
+    <button type="submit" class="btn-primary ">Submit</button>
+  </form>
+</div>

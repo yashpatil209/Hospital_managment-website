@@ -1,0 +1,47 @@
+<% if(currUser.role == "hospital"){ %>
+    <% layout("/layouts/hdashboard") %>
+<% } %>
+<% if(currUser.role == "doctor"){ %>
+    <% layout("/layouts/ddashboard") %>
+<% } %>
+
+
+<div class="dr_info_div" >
+    <h3 class="patient_info_heaing" >Fill Billing details</h3>
+    <form action="/newlife/<%= id %>/patientbilling" method="POST">
+      <div>
+        <br><br>    
+        <div class="form-row mt-4">
+          <div class="form-group col-md-3 ml-4">
+            <label for="inputEmail4">Injection fees</label>
+            <input type="number" name="bill[injection]" class="form-control"  >
+          </div>
+          <div class="form-group col-md-3 ml-5">
+            <label for="inputPassword4">Saline fees</label>
+            <input type="number" name="bill[saline]" class="form-control"  >
+          </div>
+        </div>
+        <div class="form-row mt-4">
+          <div class="form-group col-md-3 ml-4">
+            <label for="inputEmail4">Dressing fees</label>
+            <input type="number" name="bill[dressing]" class="form-control"  >
+          </div>
+          <div class="form-group col-md-3 ml-5">
+            <label for="inputPassword4">lab fees</label>
+            <input type="number" name="bill[labfees]" class="form-control" >
+          </div>
+        </div>
+        <div class="form-row mt-4">
+          <div class="form-group col-md-3 ml-4">
+            <label for="inputEmail4">Operation Fees</label>
+            <input type="number" name="bill[operation]" class="form-control"  >
+          </div>
+          <div class="form-group col-md-3 ml-5">
+            <label for="inputPassword4">Other Fees</label>
+            <input type="number" name="bill[other]" class="form-control" >
+          </div>
+        </div>
+      <br><br>
+      <button type="submit" class=" btn-primary m1-3 ">Submit</button>
+    </form>
+  </div>

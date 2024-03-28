@@ -1,0 +1,55 @@
+<% layout("/layouts/ddashboard") %>
+
+<div class="patient_info">
+    <div class="dash_heading">
+      <h4>Appointments</h4>
+    </div>
+
+    <div class="table_card">
+      <table>
+        <tr>
+          <th>name</th>
+          <th>phone no</th>
+          <th>email</th>
+          <th>time</th>
+          <th></th>
+        </tr>
+        <% for(let app of myapps.appointments){ %>
+            <tr>
+              <% if(app.time == "Morning") { %>
+                <td><%= app.namea %></td>
+                <td><%= app.phonea %></td>
+                <td><%= app.emaila %></td>
+                <td><%= app.time %></td>
+                <td>
+                  <form method="post" action="/newlife/ddashboard/<%= app._id %>/appointmentdone?_method=DELETE">
+                    <button >Done</button>
+                  </form>
+                </td>
+              <%}%>
+              <% if(app.time == "Evening") { %>
+                <td><%= app.namea %></td>
+                <td><%= app.phonea %></td>
+                <td><%= app.emaila %></td>
+                <td><%= app.time %></td>
+                <td>
+                  <form method="post" action="/newlife/ddashboard/<%= app._id %>/appointmentdone?_method=DELETE">
+                    <button >Done</button>
+                  </form>
+                </td>
+              <%}%>
+              <% if(app.time == "Afternoon") { %>
+                <td><%= app.namea %></td>
+                <td><%= app.phonea %></td>
+                <td><%= app.emaila %></td>
+                <td><%= app.time %></td>
+                <td>
+                  <form method="post" action="/newlife/ddashboard/<%=id%>/appointmentdone?id=<%= app._id %>&_method=DELETE">
+                    <button >Done</button>
+                  </form>
+                </td>
+              <%}%>
+            </tr>
+            <% } %>
+    </div>
+  </div>

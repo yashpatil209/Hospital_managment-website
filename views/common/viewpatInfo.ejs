@@ -1,0 +1,260 @@
+<% if(currUser.role == "hospital"){ %>
+    <% layout("/layouts/hdashboard") %>
+<% } %>
+<% if(currUser.role == "doctor"){ %>
+    <% layout("/layouts/ddashboard") %>
+<% } %>
+<% if(currUser.role == "patient"){ %>
+    <% layout("/layouts/pdashboard") %>
+<% } %>
+
+
+<style>
+    @media print {
+  body {
+    visibility: hidden;
+  }
+  .print_section {
+    visibility: visible;
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    width: 100%;
+  }
+ }
+</style>
+
+
+<div class="info_main">
+    <div class="information_card d-flex">
+        <!-- <h5>Patient Information</h5> -->
+        <% if(info.report){ %>
+            <a href="/newlife/<%= patient._id %>/patientreport">View Report</a>
+        <% } %>
+        <% if(!info.discharge && currUser.role == "hospital"){ %>
+            <form action="/newlife/<%= patient._id %>/patientInfo" method="post">
+                <button class="discharge_button" type="submit">Discharge</button>
+            </form>
+        <% } %>
+        <% if(info.discharge){ %>
+            <a href="/newlife/<%= patient._id %>/hospitalbill" >View Bill</a>
+        <% } %>
+        <button class="print_btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+    </div>
+</div>
+
+<div class="info_main print_section">
+    <div class="information_card">
+        <h2>Information</h2><hr>
+        <div class="ward_card">
+            <p>Addmission Date  :  &nbsp;<span><%= info.addDate.toLocaleDateString() %></span></p>
+            <p>Ward :&nbsp; <span><%= info.ward %></span></p>
+            <p>Romm no : &nbsp;<span><%= info.wardno %></span></p>
+        </div>
+
+        <h2>Patient Information</h2><hr>
+        <div class="card-body">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Patient Name</td>
+                        <td>:</td>
+                        <td><%= patient.name %></td>
+                    </tr>
+                    <tr>
+                        <td>Patient Father Name</td>
+                        <td>:</td>
+                        <td><%= info.fname %></td>
+                    </tr>
+                    <tr>
+                        <td>Patient Mother Name</td>
+                        <td>:</td>
+                        <td><%= info.mname %></td>
+                    </tr>
+                    <tr>
+                        <td>Patient Phone no</td>
+                        <td>:</td>
+                        <td><%= info.phoneno %></td>
+                    </tr>
+                    <tr>
+                        <td>Patient Email Id</td>
+                        <td>:</td>
+                        <td><%= patient.email %></td>
+                    </tr>
+                    <tr>
+                        <td>Patient DOB</td>
+                        <td>:</td>
+                        <td><%= info.dob %></td>
+                    </tr>
+                    <tr>
+                        <td> Patient Gender</td>
+                        <td>:</td>
+                        <td><%= info.sex %></td>
+                    </tr>
+                    <tr>
+                        <td>Patient Age</td>
+                        <td>:</td>
+                        <td><%= info.age %></td>
+                    </tr>
+                    <tr>
+                        <td>Patient Blood Group</td>
+                        <td>:</td>
+                        <td><%= info.bg %></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <h2>Address Information</h2><hr>
+        <div class="card-body">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Patient Address</td>
+                        <td>:</td>
+                        <td><%= info.addp %></td>
+                    </tr>
+                    <tr>
+                        <td>Patient City</td>
+                        <td>:</td>
+                        <td><%= info.city %></td>
+                    </tr>
+                    <tr>
+                        <td>Patient State</td>
+                        <td>:</td>
+                        <td><%= info.state %></td>
+                    </tr>
+                    <tr>
+                        <td>Patient Country</td>
+                        <td>:</td>
+                        <td><%= info.country %></td>
+                    </tr>
+                    <tr>
+                        <td>Zip-code</td>
+                        <td>:</td>
+                        <td><%= info.zip %></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Guardian Information</h2><hr>
+        <div class="card-body">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Relation with patient</td>
+                        <td>:</td>
+                        <td><%= info.grelation %></td>
+                    </tr>
+                    <tr>
+                        <td>Guardian name</td>
+                        <td>:</td>
+                        <td><%= info.gname %></td>
+                    </tr>
+                    <tr>
+                        <td>Guardian phoneno</td>
+                        <td>:</td>
+                        <td><%= info.gphone %></td>
+                    </tr>
+                    <tr>
+                        <td>Guardian Address</td>
+                        <td>:</td>
+                        <td><%= info.gadd %></td>
+                    </tr>
+                    <tr>
+                        <td>City</td>
+                        <td>:</td>
+                        <td><%= info.gcity %></td>
+                    </tr>
+                    <tr>
+                        <td>State</td>
+                        <td>:</td>
+                        <td><%= info.state %></td>
+                    </tr>
+                    <tr>
+                        <td>Country</td>
+                        <td>:</td>
+                        <td><%= info.country %></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Insurance Information</h2><hr>
+        <div class="card-body">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Insurance name</td>
+                        <td>:</td>
+                        <td><%= info.iname %></td>
+                    </tr>
+                    <tr>
+                        <td>Insurance number</td>
+                        <td>:</td>
+                        <td><%= info.ino %></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<!-- <h2>SOCIAL MEDIA</h2>
+<div class="information_card">
+    <div class="card-body">
+        <i class="fa fa-pen fa-xs edit"></i>
+        <div class="social-media">
+            <span class="fa-stack fa-sm">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-sm">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-sm">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-sm">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-invision fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-sm">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-sm">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
+            </span>
+            <span class="fa-stack fa-sm">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-snapchat fa-stack-1x fa-inverse"></i>
+            </span>
+        </div>
+    </div> -->

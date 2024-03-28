@@ -1,0 +1,59 @@
+<% layout("/layouts/hdashboard") %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+
+<div class="p-4">
+   <div class="dash_heading" >
+      <h4>Newlife Hospital Dashboard</h4>
+  </div>
+  <div class="dashboard_card1">
+    <div class="dashcard">
+        <img class="dc_img" src="/images/patient (1).png" alt="">
+        <p class="dc_text"><span>Patients</span></p>
+        <p class="dc_count">98</p>
+    </div>
+    <div class="dashcard">
+        <img class="dc_img" src="/images/doctorlogo.png" alt="">
+        <p class="dc_text"><span>Doctors</span></p>
+        <p class="dc_count">98</p>
+    </div>
+    <div class="dashcard">
+        <img class="dc_img" src="/images/receipt.png" alt="">
+        <p class="dc_text"><span>Billing</span></p>
+        <p class="dc_count">$ 98</p>
+    </div>
+    <div class="dashcard">
+        <img class="dc_img" src="/images/bed.png" alt="">
+        <p class="dc_text"><span>Rooms</span></p>
+        <p class="dc_count">98</p>
+    </div>
+  </div>
+  <div class="chart">
+      <canvas id="barChart"></canvas>
+  </div>
+  <!-- Sale & Revenue End -->
+  
+  <div class="bg-light" style="padding: 20px 20px; margin-top: 20px; height: 500px; overflow: hidden;">
+    <h3>Our Doctors</h3>
+    <div class="patient_info_div">
+      <table>
+        <tr>
+          <th>name</th>
+          <th class="res_table">username</th>
+          <th class="res_table" >Department</th>
+          <th class="res_table">email</th>
+          <th></th>
+        </tr>
+        <% for(let doctor of doctors){ %>
+          <tr>
+            <td><%= doctor.name %></td>
+            <td class="res_table"><%= doctor.username %></td>
+            <td class="res_table"><%= doctor.department %></td>
+            <td class="res_table"><%= doctor.email %></td>
+            <td><a href="/newlife/hdashboard/<%= doctor._id %>/doctorinfo">more info</a></td>
+          </tr>
+          <% } %>
+        </div>
+      </div>
+    </div>
+    

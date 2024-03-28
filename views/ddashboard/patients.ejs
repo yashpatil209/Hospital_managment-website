@@ -1,0 +1,36 @@
+<% layout("/layouts/ddashboard") %>
+
+<div class="patient_info">
+  <div class="dash_heading">
+    <h4>Patients</h4>
+  </div>
+  <form action="/newlife/ddashboard/<%= currUser._id %>/patients" method="post" class="search-bar">
+    <input type="text" name="name" placeholder="search here" required>
+    <button>Submit</button>
+  </form> 
+  <div class="table_card">
+    <table>
+      <tr>
+        <th>name</th>
+        <th>username</th>
+        <th>email</th>
+        <th>Info</th>
+        <th>Fill Bill</th>
+      </tr>
+      <% for(let patient of patients){ %>
+        <tr>
+          <td><%= patient.name %></td>
+          <td><%= patient.username %></td>
+          <td><%= patient.email %></td>
+          <td>
+            <% if(patient.info){ %>
+              <a href="/newlife/<%= patient._id %>/patientInfo">view Info</a></td>
+            <% } %>
+          </td>
+          <td>
+            <a href="/newlife/<%= patient._id %>/patientbilling">Fill Bill</a>
+          </td>
+        </tr>
+        <% } %>
+  </div>
+</div>

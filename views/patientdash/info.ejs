@@ -1,0 +1,35 @@
+<% layout("/layouts/pdashboard") %>
+
+<div class="table_card">
+    <h5>Personal details - </h5>
+    <hr>
+    <p>patient Name :  <span><%= patient.name %></span></p>
+    <p>Father name :  <span><%= pInfo.fname %></span></p>
+    <p>Mother name :  <span><%= pInfo.mname %></span></p>
+    <p>Phone no :  <span><%= pInfo.phoneno %></span></p>
+    <p>Email id :  <span><%= patient.email %></span></p>
+    <p>Dob :  <span><%= pInfo.dob %></span></p>
+    <p>Sex :  <span><%= pInfo.sex %></span></p>
+    <p>Age :  <span><%= pInfo.age %></span></p>
+    <br><h5>Address Information - </h5>
+    <hr>
+    <p>Address :  <span><%= pInfo.addp %></span></p>
+    <p>city :  <span><%= pInfo.city %></span></p>
+    <p>state :  <span><%= pInfo.state %></span></p>
+    <p>country :  <span><%= pInfo.country %></span></p>
+    <p>Zip-code :  <span><%= pInfo.zip %></span></p>
+    <br><h5>Guardian Information - </h5>
+    <hr>
+    <p>Relation with patient :  <span><%= pInfo.grelation %></span></p>
+    <p>Guardian name :  <span><%= pInfo.gnmae %></span></p>
+    <p>Guardian phoneno :  <span><%= pInfo.gphone %></span></p>
+    <p>Address :  <span><%= pInfo.gadd %></span></p>
+    <p>city :  <span><%= pInfo.gcity %></span></p>
+    <p>state :  <span><%= pInfo.gstate %></span></p>
+    <p>country :  <span><%= pInfo.gcountry %></span></p>
+    <br><h5>Insurance Information - </h5>
+    <hr>
+    <p>Insurance name :  <span><%= pInfo.iname %></span></p>
+    <p>Insurance no :  <span><%= pInfo.ino %></span></p>
+
+</div>
