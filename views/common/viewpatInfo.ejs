@@ -32,7 +32,7 @@
             <a href="/newlife/<%= patient._id %>/patientreport">View Report</a>
         <% } %>
         <% if(!info.report){ %>
-            <a href="/newlife/ddashboard/<%= patient._id %>/fillpatientreport">View Report</a>
+            <a href="/newlife/ddashboard/<%= patient._id %>/fillpatientreport">Fill Report</a>
         <% } %>
         <% if(!info.discharge && currUser.role == "hospital"){ %>
             <form action="/newlife/<%= patient._id %>/patientInfo" method="post">
