@@ -5,11 +5,11 @@ const User = require("../models/user");
 const nodemailer = require('nodemailer');
 const { isHospital } = require("../middleware");
 
-router.get("/signup" , isHospital ,(req , res)=>{
+router.get("/signup"  ,(req , res)=>{
     res.render("hdashboard/signup.ejs")
 })
 
-router.post("/signup" , isHospital, async(req , res)=>{
+router.post("/signup" , async(req , res)=>{
     let {username , email , name ,department , role ,password} = req.body;
     const newUser = new User({email ,username ,name ,department , role });
     const user = await User.register(newUser , password);
