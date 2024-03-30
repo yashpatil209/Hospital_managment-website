@@ -60,7 +60,7 @@ router.get("/:id/hospitalbill" , async(req , res)=>{
     let patient = await User.findById(id);
     let info = await patientInfo.findById(patient.info);
     let bill = await billing.findById(info.bill);
-    let days = parseInt((info.discharge - info.addDate) / (1000*60*60*24));
+    let days = parseInt((info.discharge - patient.addDate) / (1000*60*60*24));
     let bedCharge = 0;
     
     if(info.ward == "gw"){

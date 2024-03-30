@@ -2,10 +2,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const patientSchema = new Schema({
-    addDate:{
-        type : Date,
-        default : Date.now(),
-    },
     discharge :{
         type : Date,
     },

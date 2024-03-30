@@ -5,6 +5,10 @@ const Schema = mongoose.Schema;
 const passportLocalMongoose = require("passport-local-mongoose");
 
 const userSchema = new Schema({
+    addDate:{
+        type : Date,
+        default : Date.now(),
+    },
     name :{
         type: String,
         required:true,

@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require("../models/user");
 const doctorInfo = require("../models/doctorInfo");
 const appointment = require("../models/appointment");
+const nodemailer = require('nodemailer');
 
 
 router.get("/" , async(req , res)=>{
@@ -33,6 +34,27 @@ router.post("/:id/getappointment" , async(req , res)=>{
     Drappointment.date = req.body.date;
     let doctor = await User.findById(req.params.id);
     doctor.appointments.push(Drappointment._id);
+
+    var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: 'yashkumarpatil2004@gmail.com',
+          pass: 'ifbi emmj dcrg sjco'
+        }
+    });
+      
+    var mailOptions = {
+        from: 'yashkumarpatil2004@gmail.com',
+        to: Drappointment.emaila,
+        subject: 'Newlife hospital Appointment',
+        text: `You are successfully Book an appointment on date ${Drappointment.date} at ${Drappointment.time} session. please come before time . `,
+    };
+      
+    transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+          console.log(error);
+        }
+    });
 
     await Drappointment.save();
     await doctor.save();
