@@ -37,7 +37,7 @@ main().then(()=>{
 })
 
 async function main(){
-    await mongoose.connect(MONGO_DB);
+    await mongoose.connect(MONGO_URL);
 }
 
 app.set("view engine" , "ejs");
@@ -48,7 +48,7 @@ app.use(express.static(path.join(__dirname , "/public")));
 
 
 const store = MongoStore.create({
-    mongoUrl : MONGO_DB,
+    mongoUrl : MONGO_URL,
     crypto : {
         secret : process.env.SECRETE,
     },
