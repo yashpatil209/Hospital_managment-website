@@ -1,0 +1,203 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey",
+        "Good morning",
+        "Good evening",
+        "Is anyone there?"
+      ],
+      "responses": [
+        "Hello! Welcome to Newlife Hospital. How can I assist you today?",
+        "Hi there! How may I help you?",
+        "Hello! What can I do for you?"
+      ]
+    },
+    {
+      "tag": "hours",
+      "patterns": [
+        "What are your working hours?",
+        "When is the hospital open?",
+        "Can you tell me your timings?",
+        "Opening hours?",
+        "What time do you close?"
+      ],
+      "responses": [
+        "Our hospital is open from 8 AM to 8 PM, Monday to Saturday.",
+        "We operate from 8 AM to 8 PM on weekdays and Saturdays. We are closed on Sundays."
+      ]
+    },
+    {
+      "tag": "appointment",
+      "patterns": [
+        "I need to book an appointment",
+        "How can I schedule a visit?",
+        "I want to see a doctor",
+        "Can I book an appointment?",
+        "Doctor appointment?"
+      ],
+      "responses": [
+        "Sure! Please click on the 'Book Appointment' tab at the top of the page to schedule your visit.",
+        "To book an appointment, click the 'Book Appointment' tab at the top of the page and follow the instructions.",
+        "To schedule a visit, simply click on the 'Book Appointment' tab above and fill out the form."
+      ]
+    },
+    {
+      "tag": "specialties",
+      "patterns": [
+        "What specialties do you have?",
+        "Which doctors are available?",
+        "Do you have a cardiologist?",
+        "What departments are there?",
+        "Specialties available?"
+      ],
+      "responses": [
+        "We offer services in the following specialties: Cardiology, Pediatrics, Neurology, Orthopedics, Gynecology, and General Medicine.",
+        "Our hospital has departments for Cardiology, Pediatrics, Neurology, Orthopedics, Gynecology, General Medicine, and more."
+      ]
+    },
+    {
+      "tag": "emergency",
+      "patterns": [
+        "Do you have an emergency service?",
+        "What to do in an emergency?",
+        "Emergency contact?",
+        "How to contact the emergency department?"
+      ],
+      "responses": [
+        "For emergencies, please call our hotline at +91-123-456-7890 or visit our emergency department, which is open 24/7.",
+        "Our emergency services are available round the clock. Please call +91-123-456-7890 for immediate assistance."
+      ]
+    },
+    {
+      "tag": "billing",
+      "patterns": [
+        "What are your charges?",
+        "Can you explain the billing process?",
+        "How do I pay?",
+        "Billing options?",
+        "Do you accept credit cards?"
+      ],
+      "responses": [
+        "Our billing process is transparent. We accept cash, credit/debit cards, and online payments. For insurance claims, please contact our billing department.",
+        "You can pay via cash, card, or online transfer. For detailed billing, please visit our billing desk or call +91-123-456-7891."
+      ]
+    },
+    {
+      "tag": "insurance",
+      "patterns": [
+        "Do you accept insurance?",
+        "Is insurance covered?",
+        "Which insurance companies are tied up?",
+        "Can I pay using insurance?"
+      ],
+      "responses": [
+        "Yes, we accept insurance. We are tied up with major insurance providers. Please check with our billing department for details.",
+        "Insurance is accepted here. For specific queries, contact our billing desk at +91-123-456-7891."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thank you",
+        "Thanks",
+        "Thanks a lot",
+        "That's helpful",
+        "Thanks for the help"
+      ],
+      "responses": [
+        "You're welcome! Let us know if there's anything else.",
+        "Happy to help! Have a great day!"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "Goodbye",
+        "See you later",
+        "Talk to you later"
+      ],
+      "responses": [
+        "Goodbye! Take care and stay healthy.",
+        "Bye! Feel free to reach out anytime."
+      ]
+    },
+    {
+      "tag": "unknown",
+      "patterns": [],
+      "responses": [
+        "I'm sorry, I didn't understand that. Can you please rephrase?",
+        "I didn't quite catch that. Could you clarify?"
+      ]
+    },
+    {
+      "tag": "directions",
+      "patterns": [
+        "How do I get to the hospital?",
+        "Where is the hospital located?",
+        "Can you give me directions?",
+        "Where are you located?"
+      ],
+      "responses": [
+        "Our hospital is located at Pune. You can reach us via main Road and we are next to ganesh temple.",
+        "You can find us at main road, pune. For directions, use Google Maps or ask for assistance at ganesh temple."
+      ]
+    },
+    {
+      "tag": "lab_tests",
+      "patterns": [
+        "Do you offer lab tests?",
+        "What tests do you provide?",
+        "Can I get a blood test?",
+        "Are lab services available?"
+      ],
+      "responses": [
+        "Yes, we offer a wide range of lab tests including blood tests, urine tests, and imaging services like X-rays and MRIs.",
+        "Our lab services include routine blood tests, diagnostic imaging, and more. Please visit our lab reception for details."
+      ]
+    },
+    {
+      "tag": "patient_care",
+      "patterns": [
+        "Do you offer patient care services?",
+        "How can I contact patient care?",
+        "Can I speak to a nurse?",
+        "Is there a patient care team?"
+      ],
+      "responses": [
+        "Yes, we have a dedicated patient care team available to assist you. Please call +91-123-456-7892 for assistance.",
+        "Our patient care department is here to support you throughout your visit. You can reach them at +91-123-456-7892."
+      ]
+    },
+    {
+      "tag": "facilities",
+      "patterns": [
+        "What facilities does your hospital have?",
+        "Do you have a cafeteria?",
+        "Is there parking available?",
+        "Are there any amenities?"
+      ],
+      "responses": [
+        "Our hospital has a cafeteria, free Wi-Fi, ample parking, and a pharmacy. We also have waiting areas for your comfort.",
+        "We offer various amenities such as a cafeteria, ample parking spaces, and free Wi-Fi. For any other facilities, feel free to ask."
+      ]
+    },
+    {
+      "tag": "hospital_staff",
+      "patterns": [
+        "Can I speak to the hospital administrator?",
+        "Who is the hospital director?",
+        "Can I meet the head of cardiology?",
+        "Who are the doctors on staff?"
+      ],
+      "responses": [
+        "You can contact them at +91 7899451235.",
+        "You can meet the doctors in various departments. Would you like to know more about a specific specialty or doctor?"
+      ]
+    }
+  ]
+}
